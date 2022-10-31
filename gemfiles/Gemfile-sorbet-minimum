@@ -1,0 +1,5 @@
+# frozen_string_literal: true
+
+gem("sorbet-static-and-runtime", "0.5.9204")
+
+eval_gemfile "../Gemfile"

@@ -15,7 +15,7 @@ module Tapioca
               assert_empty(gathered_constants)
             end
 
-            it "gathers only ActiveRecord constants with no abstract classes" do
+            it "gathers ActiveRecord constants including abstract classes" do
               add_ruby_file("post.rb", <<~RUBY)
                 class Post < ActiveRecord::Base
                 end
@@ -28,7 +28,7 @@ module Tapioca
                 end
               RUBY
 
-              assert_equal(["Post"], gathered_constants)
+              assert_equal(["Post", "Product"], gathered_constants)
             end
           end
 

@@ -181,7 +181,7 @@ module Tapioca
 
           sig { override.returns(T::Enumerable[Module]) }
           def gather_constants
-            ActiveRecord::Base.descendants
+            descendants_of(ActiveRecord::Base)
           end
         end
 
